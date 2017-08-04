@@ -2,11 +2,51 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Ninoop P George</title>
+
+    <link rel="stylesheet" href="css/dist/css/kube.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
   </head>
   <body>
 
+    <div class="main" ng-app="nin" ng-controller="firstCtrl">
+        <form class="form">
+            <div class="form-item">
+                <label class="small">Todays Date</label>
+                <input type="text" ng-model="displaydate" class="success" disabled>
+            </div>
+            <div class="form-item">
+                <label>Folder Name</label>
+                <input type="text" ng-model="foldername" class="strong" disabled>
+            </div>
+            <div class="form-item">
+                <label>Project Name</label>
+                <input type="text" ng-model="projectname" ng-change="updatefoldername()">
+            </div>
+            <div class="form-item">
+                <label class="checkbox"><input type="checkbox" ng-model="npm" value="1"> Initialize npm</label>
+                <label class="checkbox"><input type="checkbox" ng-model="git" value="2"> Initialize git</label>
+                <label class="checkbox"><input type="checkbox" ng-model="folders" value="3"> Add css,img,fonts,js folders</label>
+                <label class="checkbox"><input type="checkbox" ng-model="gulp" value="4"> Initialize gulp with livereload and sass</label>
+            </div>
+            <div ng-show="show" class="message error" data-component="message"> Please wait while we install the node dependencies  <span class="close small"></span></div>
+            <div ng-show="showq" class="message error" data-component="message"> Tasks Finished Successfully...  <span class="close small"></span></div>
+            <div ng-show="show" class="progressbar"><a class="inner" ng-class="mydynamicclass"></a></div>
+            <div class="form-item">
+                <button class="button" ng-click="submit()">Create folder</button>
+            </div>
+        </form>
+          
+        
+        
+        
+        
+        
+        
+    </div>
     
-    
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
